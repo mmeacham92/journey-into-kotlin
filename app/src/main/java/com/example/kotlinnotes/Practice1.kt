@@ -10,22 +10,33 @@ fun main() {
 //        "F" for anything else
 
 fun getExamGrade(result: ExamResult): String {
-    val score = result.score;
+//    val score = result.score;
+//
+//    if (score in 90..100) return "A"
+//    else if (score in 80..89) return "B"
+//    else if (score in 70..79) return "C"
+//    else return "F"
 
-    if (score in 90..100) return "A"
-    else if (score in 80..89) return "B"
-    else if (score in 70..79) return "C"
-    else return "F"
+    // the cool Kotlin way of solving this problem: use 'when' (seems like a switch)
+    return when(result.score) {
+        in 90..100 -> "A"
+        in 80..89 -> "B"
+        in 70..79 -> "C"
+        else -> "F"
+    }
 }
 
 // Return the number of exam results which had a score higher than the threshold parameter
 fun countScoresHigherThan(threshold: Int, results: List<ExamResult>): Int {
-    var count = 0
-    for (result: ExamResult in results) {
-        if (result.score > threshold) count += 1
-    }
+//    var count = 0
+//    for (result: ExamResult in results) {
+//        if (result.score > threshold) count += 1
+//    }
+//
+//    return count
 
-    return count
+    // using the built in count method
+    return results.count { it.score > threshold }
 }
 
 fun runTests() {
