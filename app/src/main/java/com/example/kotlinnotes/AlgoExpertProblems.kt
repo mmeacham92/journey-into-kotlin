@@ -1,5 +1,7 @@
 package com.example.kotlinnotes
 
+import kotlin.math.abs
+
 // -----------------------------------------------------------
 // completed: 10/8/2023
 fun sortedSquaredArray(array: List<Int>): List<Int> {
@@ -25,10 +27,13 @@ fun sortedSquaredArray(array: List<Int>): List<Int> {
     val sortedSquares = mutableListOf<Int>()
     var smallIndex = 0
     var largeIndex = array.size - 1
-    for (i in 0..array.size - 1) {
-        val numberToSquare: Int
-        if (Math.abs(array[smallIndex]) > Math.abs(array[largeIndex])) numberToSquare = array[smallIndex++]
-        else numberToSquare = array[largeIndex--]
+    // 10/14/2023
+    // Recently learned about the array.indices property which is a much more elegant approach than using i in 0..array.size-1
+    for (i in array.indices) {
+        // 10/14/2023
+        // Reviewed my past solution and realized I could use idiomatic Kotlin here instead of a "regular" if-else block
+        val numberToSquare = if (abs(array[smallIndex]) > abs(array[largeIndex])) array[smallIndex++]
+        else array[largeIndex--]
 
         sortedSquares.add(0, numberToSquare * numberToSquare)
 
