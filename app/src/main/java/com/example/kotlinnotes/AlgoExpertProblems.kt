@@ -14,14 +14,22 @@ fun tournamentWinner(competitions: List<List<String>>, results: List<Int>): Stri
         var winner = competitions[i][currentMatch.size - 1 - positionOfWinner]
 
         if (scoreMap.containsKey(winner)) {
-            var newScore = scoreMap[winner]?.plus(3)
-
-
-        }
-
+            var currentScore = scoreMap[winner] ?: 0
+            var newScore = currentScore + 3
+            scoreMap[winner] = newScore
+        } else scoreMap[winner] = 0
     }
 
-    return ""
+    var winningTeam = ""
+    var winningScore = 0
+    for (key in scoreMap.keys) {
+        if (scoreMap[key]!! > winningScore) {
+            winningTeam = key
+            winningScore = scoreMap[key]!!
+        }
+    }
+
+    return winningTeam
 }
 
 // -----------------------------------------------------------
