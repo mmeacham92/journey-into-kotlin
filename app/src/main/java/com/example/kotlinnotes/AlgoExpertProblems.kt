@@ -3,6 +3,28 @@ package com.example.kotlinnotes
 import kotlin.math.abs
 
 // -----------------------------------------------------------
+// completed: work in progress... trying to find the right method to handle potential nulls
+fun tournamentWinner(competitions: List<List<String>>, results: List<Int>): String {
+    // Write your code here.
+    var scoreMap = mutableMapOf<String, Int>()
+    for (i in results.indices) {
+        // use results[i] to determine who won from competitions
+        var currentMatch = competitions[i]
+        var positionOfWinner = results[i]
+        var winner = competitions[i][currentMatch.size - 1 - positionOfWinner]
+
+        if (scoreMap.containsKey(winner)) {
+            var newScore = scoreMap[winner]?.plus(3)
+
+
+        }
+
+    }
+
+    return ""
+}
+
+// -----------------------------------------------------------
 // completed: 10/8/2023
 fun sortedSquaredArray(array: List<Int>): List<Int> {
     // Write your code here.
