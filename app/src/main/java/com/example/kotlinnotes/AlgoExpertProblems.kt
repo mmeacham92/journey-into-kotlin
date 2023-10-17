@@ -3,7 +3,7 @@ package com.example.kotlinnotes
 import kotlin.math.abs
 
 // -----------------------------------------------------------
-// completed: work in progress... trying to find the right method to handle potential nulls
+// completed: 10/16/2023
 fun tournamentWinner(competitions: List<List<String>>, results: List<Int>): String {
     // Write your code here.
     val scoreMap = mutableMapOf<String, Int>()
