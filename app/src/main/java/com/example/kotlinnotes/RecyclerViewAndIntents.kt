@@ -41,4 +41,17 @@ Create an intent:
     - startActivity(myIntent)
 
 
+RecyclerView:
+- RecyclerView is freaking sweet...
+- Initially, create as many views as needed to fill UI
+- As the user scrolls, elements which fall off the screen ("discarded views") are recycled
+- The "dirty" views are bound with new data, then displayed as the next view seen
+- This decreases how much memory is needed (compared to a ListView) since we only have to create a fixed number
+    of views, then we can recycle as needed
+
+- RecyclerView uses a LayoutManager to control how views are displayed
+- The RecyclerView is attached to an Adapter
+- The Adapter is responsible for binding data to each views
+- The Adapter does this by "communicating" with a dataset (API, database, data object, etc)
+
 */
