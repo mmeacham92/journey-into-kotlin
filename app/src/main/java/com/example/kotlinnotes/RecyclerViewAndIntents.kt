@@ -54,4 +54,6 @@ RecyclerView:
 - The Adapter is responsible for binding data to each views
 - The Adapter does this by "communicating" with a dataset (API, database, data object, etc)
 
+- 10/22/2023: Taking the day off
+
 */
