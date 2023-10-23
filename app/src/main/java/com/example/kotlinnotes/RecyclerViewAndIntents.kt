@@ -40,6 +40,25 @@ Create an intent:
     - myIntent.putExtra("username", "bigmeach")
     - startActivity(myIntent)
 
+- Explicit vs Implicit Intents
+    - Explicit: launch other activities in your app
+        - val myIntent = Intent(this, ActivityName::class.java)
+        - startActivity(myIntent)
+    - Implicit: request to perform an action based on a desired action
+        - val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("url.com"))
+        - startActivity(browserIntent)
+        - Common implicit intents: start a phone call, take a picture, open the browser/maps
+
+- Returning data to the parent
+    - Sometimes you'll want to get data from the launched activity
+        - ProfileActivity launched EditActivity, user edited their profile
+        - Intent to take a picture
+    - Call startActivityFromResult rather than startActivity
+        - Pass a request code along with the intent
+        - Returns immediately, but the Android system will call another method
+    - onActivityResult is called when the second activity is done
+        - Second activity should call setResult and finish to communicate back
+
 
 RecyclerView:
 - RecyclerView is freaking sweet...
