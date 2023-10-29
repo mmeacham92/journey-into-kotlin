@@ -74,5 +74,6 @@ RecyclerView:
 - The Adapter does this by "communicating" with a dataset (API, database, data object, etc)
 
 - 10/22/2023: Taking the day off
+- 10/28/2023: Big headache all day, took the day off
 
 */
