@@ -3,6 +3,16 @@ package com.example.kotlinnotes
 import kotlin.math.abs
 
 // -----------------------------------------------------------
+// completed: 11/06/2023
+fun isPalindrome(string: String): Boolean {
+    // Write your code here.
+    for (i in 0..string.length / 2) {
+        if (string[i] != string[string.length - i - 1]) return false
+    }
+    return true
+}
+
+// -----------------------------------------------------------
 // completed: 10/16/2023
 fun tournamentWinner(competitions: List<List<String>>, results: List<Int>): String {
     // Write your code here.
