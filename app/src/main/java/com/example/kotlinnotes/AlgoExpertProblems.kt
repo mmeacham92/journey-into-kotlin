@@ -3,6 +3,25 @@ package com.example.kotlinnotes
 import kotlin.math.abs
 
 // -----------------------------------------------------------
+// completed: 11/12/2023
+fun semordnilap(words: List<String>): List<List<String>> {
+    val result = mutableListOf<List<String>>()
+
+    for (i in words.indices) {
+        val currentWord: String = words[i].lowercase()
+        for (j in i + 1..words.size - 1) {
+            if (currentWord.equals(words[j].lowercase().reversed())) {
+                result.add(listOf(currentWord, words[j]))
+            }
+        }
+    }
+
+    return result
+}
+
+// this feels like a naive approach - will revisit this problem tomorrow morning
+
+// -----------------------------------------------------------
 // completed: 11/06/2023
 fun isPalindrome(string: String): Boolean {
     // Write your code here.
